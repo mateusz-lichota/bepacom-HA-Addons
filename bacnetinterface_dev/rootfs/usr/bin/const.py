@@ -1,10 +1,11 @@
 import logging
+from collections.abc import Sequence
 
-from bacpypes3.basetypes import ObjectType, PropertyIdentifier
+from bacpypes3.primitivedata import Enumerated, ObjectType, PropertyIdentifier
 
 LOGGER = logging.getLogger(__package__)
 
-device_properties_to_read: list = [
+DEVICE_PROPERTIES_TO_READ: Sequence[Enumerated] = [
     PropertyIdentifier("objectIdentifier"),
     PropertyIdentifier("objectType"),
     PropertyIdentifier("objectName"),
@@ -30,7 +31,7 @@ device_properties_to_read: list = [
     PropertyIdentifier("serialNumber"),
 ]
 
-object_properties_to_read_once: list = [
+OBJECT_PROPERTIES_TO_READ_ONCE: Sequence[Enumerated] = [
     PropertyIdentifier("objectIdentifier"),
     PropertyIdentifier("objectType"),
     PropertyIdentifier("objectName"),
@@ -54,7 +55,7 @@ object_properties_to_read_once: list = [
     PropertyIdentifier("resolution"),
 ]
 
-object_properties_to_read_periodically: list = [
+OBJECT_PROPERTIES_TO_READ_PERIODICALLY: Sequence[Enumerated] = [
     PropertyIdentifier("presentValue"),
     PropertyIdentifier("statusFlags"),
     PropertyIdentifier("outOfService"),
@@ -63,7 +64,7 @@ object_properties_to_read_periodically: list = [
     PropertyIdentifier("covIncrement"),
 ]
 
-subscribable_objects: list = [
+SUBSCRIBABLE_OBJECTS: Sequence[Enumerated] = [
     ObjectType("accumulator"),
     ObjectType("analogValue"),
     ObjectType("analogInput"),

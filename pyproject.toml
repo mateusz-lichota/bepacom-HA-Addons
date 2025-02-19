@@ -1,0 +1,23 @@
+[project]
+name = "bepacom-ha-addons"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "backoff>=2.2.1",
+    "bacpypes3>=0.0.99",
+    "fastapi>=0.115.8",
+    "pydantic>=2.10.6",
+    "requests>=2.32.3",
+    "websockets>=15.0",
+
+]
+
+[dependency-groups]
+dev = [
+    "bacpypes3-stubs",
+]
+
+[tool.uv.sources]
+bacpypes3-stubs = { git = "https://github.com/mateusz-lichota/bacpypes3-stubs" }
